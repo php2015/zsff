@@ -13,4 +13,4 @@ think
 /application/wap/model/user/WechatUser.php
 /public/aa.mp4
 /public/audio.mp3
-composer.lock
+/composer.lock
