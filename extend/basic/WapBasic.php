@@ -93,7 +93,7 @@ class WapBasic extends Controller
         }catch (\Exception $e){
             Cookie::set('_oen',++$errorNum,900);
             exit(WechatService::oauthService()->scopes(['snsapi_base'])
-                ->redirect($this->request->baseUrl(true))->send());
+                ->redirect("https://z.yd-hb.com/wap/index/index.html")->send());
         }
         if(!isset($wechatInfo['nickname'])){
             $wechatInfo = WechatService::getUserInfo($wechatInfo['openid']);
