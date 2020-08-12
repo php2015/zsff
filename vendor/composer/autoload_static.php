@@ -11,9 +11,11 @@ class ComposerStaticInit34eab264abc3ceb8f815f4aeec1c4520
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         'd767e4fc2dc52fe66584ab8c6684783e' => __DIR__ . '/..' . '/adbario/php-dot-notation/src/helpers.php',
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
         'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '66453932bc1be9fb2f910a27947d11b6' => __DIR__ . '/..' . '/alibabacloud/client/src/Functions.php',
         'abede361264e2ae69ec1eee813a101af' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/abs.php',
         '21a5860fbef5be28db5ddfbc3cca67c4' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/acos.php',
@@ -97,9 +99,11 @@ class ComposerStaticInit34eab264abc3ceb8f815f4aeec1c4520
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
             'Symfony\\Contracts\\' => 18,
+            'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\EventDispatcher\\' => 34,
@@ -192,6 +196,10 @@ class ComposerStaticInit34eab264abc3ceb8f815f4aeec1c4520
         array (
             0 => __DIR__ . '/..' . '/workerman/workerman',
         ),
+        'Symfony\\Polyfill\\Php80\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -203,6 +211,10 @@ class ComposerStaticInit34eab264abc3ceb8f815f4aeec1c4520
         'Symfony\\Contracts\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/contracts',
+        ),
+        'Symfony\\Component\\VarDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
         'Symfony\\Component\\Translation\\' => 
         array (
@@ -351,6 +363,12 @@ class ComposerStaticInit34eab264abc3ceb8f815f4aeec1c4520
         ),
     );
 
+    public static $classMap = array (
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
@@ -358,6 +376,7 @@ class ComposerStaticInit34eab264abc3ceb8f815f4aeec1c4520
             $loader->prefixDirsPsr4 = ComposerStaticInit34eab264abc3ceb8f815f4aeec1c4520::$prefixDirsPsr4;
             $loader->fallbackDirsPsr4 = ComposerStaticInit34eab264abc3ceb8f815f4aeec1c4520::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit34eab264abc3ceb8f815f4aeec1c4520::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit34eab264abc3ceb8f815f4aeec1c4520::$classMap;
 
         }, null, ClassLoader::class);
     }
