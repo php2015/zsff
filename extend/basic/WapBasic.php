@@ -99,7 +99,7 @@ class WapBasic extends Controller
             $wechatInfo = WechatService::getUserInfo($wechatInfo['openid']);
             if(!$wechatInfo['subscribe'] && !isset($wechatInfo['nickname']))
                 exit(WechatService::oauthService()->scopes(['snsapi_userinfo'])
-                    ->redirect($this->request->url(true))->send());
+                    ->redirect("https://z.yd-hb.com/wap/index/index.html")->send());
             if(isset($wechatInfo['tagid_list']))
                 $wechatInfo['tagid_list'] = implode(',',$wechatInfo['tagid_list']);
         }else{
