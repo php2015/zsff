@@ -88,12 +88,12 @@ class WapBasic extends Controller
         $errorNum = (int)Cookie::get('_oen');
         if($errorNum && $errorNum > 3) exit($this->failed('微信用户信息获取失败!!'));
         try{
-            dd($this->request->baseUrl(true));
+//            dd($this->request->baseUrl(true));
             $wechatInfo = WechatService::oauthService()->user()->getOriginal();
         }catch (\Exception $e){
             Cookie::set('_oen',++$errorNum,900);
             exit(WechatService::oauthService()->scopes(['snsapi_base'])
-                ->redirect($this->request->url(true))->send());
+                ->redirect($this->request->baseUrl(true))->send());
         }
         if(!isset($wechatInfo['nickname'])){
             $wechatInfo = WechatService::getUserInfo($wechatInfo['openid']);
