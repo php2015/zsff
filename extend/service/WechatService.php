@@ -64,9 +64,10 @@ class WechatService
     {
         $wechat = self::application(true);
         $server = $wechat->server;
-        dd($server);
         self::hook($server);
         $response = $server->serve();
+        dd($response);
+
         exit($response->getContent());
     }
 
