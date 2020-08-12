@@ -62,29 +62,12 @@ class WechatService
 
     public static function serve()
     {
-        $wechat = self::application(true);
-        $wechat->server->push(function ($message) {
-            // $message['FromUserName'] // 用户的 openid
-            // $message['MsgType'] // 消息类型：event, text....
-            return "您好！欢迎使用 EasyWeChat";
-        });
-
-// 在 laravel 中：
-        $response = $wechat->server->serve();
-
-// $response 为 `Symfony\Component\HttpFoundation\Response` 实例
-// 对于需要直接输出响应的框架，或者原生 PHP 环境下
-        $response->send();
-
-// 而 laravel 中直接返回即可：
-
-        return $response;
 
         $wechat = self::application(true);
-        dd($wechat->server);die();
         $server = $wechat->server;
         self::hook($server);
         $response = $server->serve();
+        dd($response);
         exit($response->getContent());
     }
 
