@@ -60,14 +60,17 @@ class WechatService
         return self::$instance;
     }
 
-
+    /**
+     * @throws \EasyWeChat\Server\BadRequestException
+     */
     public static function serve()
     {
         $wechat = self::application(true);
         $server = $wechat->server;
+        dd($server->serve());
+
         self::hook($server);
         $response = $server->serve();
-        dd($response);
 
         exit($response->getContent());
     }
