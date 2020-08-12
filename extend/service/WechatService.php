@@ -67,6 +67,7 @@ class WechatService
     {
         $wechat = self::application(true);
         $server = $wechat->server;
+        dd($wechat->base->clearQuota());
         self::hook($server);
         $response = $server->serve();
 
