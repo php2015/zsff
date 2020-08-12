@@ -63,7 +63,7 @@ class WechatService
     public static function serve()
     {
         $wechat = self::application(true);
-        $server = $wechat->server;
+        $server = $wechat->server->serve()->send();
         var_dump($server);die();
         self::hook($server);
         $response = $server->serve();
