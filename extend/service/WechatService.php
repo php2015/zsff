@@ -60,6 +60,7 @@ class WechatService
         return self::$instance;
     }
 
+
     public static function serve()
     {
         $wechat = self::application(true);
