@@ -30,7 +30,7 @@ class WechatService
 
     public static function options()
     {
-        $wechat = SystemConfigService::more(['wechat_appid','wechat_appsecret','wechat_token']);
+        $wechat = SystemConfigService::more(['wechat_appid','wechat_appsecret','wechat_token','wechat_encodingaeskey']);
         $payment = SystemConfigService::more(['pay_weixin_mchid','pay_weixin_client_cert','pay_weixin_client_key','pay_weixin_key','pay_weixin_open']);
         $config = [
             'app_id'=>isset($wechat['wechat_appid']) ? $wechat['wechat_appid']:'',
