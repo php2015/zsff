@@ -28,7 +28,7 @@ class WapException extends Handle
         }
         // 请求异常
         if ($e instanceof HttpException && request()->isAjax()) {
-            return JsonService::fail('系统错误');
+            return $e;
         }else{
             $url = 0;
             $title = '系统错误';
